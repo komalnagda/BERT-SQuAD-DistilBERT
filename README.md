@@ -31,6 +31,20 @@ Run using
 python app.py
 ```
 
+# Docker
+
+Build the container
+
+```
+docker build -t distilbert-squad-dashboard .
+```
+
+Run the container
+
+```
+docker run -dp 8080:8080 distilbert-squad-dashboard
+```
+
 
 ### SQuAD Fine-tuned model
 
