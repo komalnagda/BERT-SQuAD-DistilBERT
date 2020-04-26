@@ -16,44 +16,19 @@ Stanford Question Answering Dataset (SQuAD) is a reading comprehension dataset, 
 
 https://rajpurkar.github.io/SQuAD-explorer/
 
-# Installation
-
-If you are testing this on your own machine I would recommend you run it in a virtual environment or use Docker, as not to affect the rest of your files.
-
-### Docker
-
-To use my docker repository:
-
-```bash
-docker pull oliverproud/distilbert-squad-flask
-```
-
-Run the container:
-
-```bash
-docker run -dp 8080:8080 oliverproud/distilbert-squad-flask
-```
-
-or Git Pull this repository and
-
-Build the container:
-
-```bash
-docker build -t distilbert-squad-flask .
-```
-
-Run the container:
-
-```bash
-docker run -dp 8080:8080 distilbert-squad-flask
-```
-
+# How to run?
 
 You must have Python3
 
 Install the requirements with:
 ```bash
 pip3 install -r requirements.txt
+```
+
+Run using
+
+```
+python app.py
 ```
 
 
