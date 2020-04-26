@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1">
+  <meta name="description" content="BERT based question and answer model demo">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="stylesheet" href="/static/css/animate.min.css">
+  <link rel="shortcut icon" type="image/png" href="/static/logo.png">
+  <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+  <title>DistilBERT QA</title>
+
+  <script>
+      $(document).ready(function(){
+        $("#question_data").hide();
+        $("#answer_data").hide();
+      });
+  </script>
+</head>
+
+<body>
+
+  <form id="idForm">
+    <div class="animated fadeIn main">
+      <br>
+
+      <h1>DistilBERT QA Demo </h1>
+      <p>Enter context:</p>
+
+      <textarea id="context" name="context" rows="8" cols="80" required></textarea>
+
+      <p>Enter question:</p>
+
+      <div class="inputWrapper">
+        <input id="question" align="center" type="text" name="question" placeholder="enter question" required>
+        <button id="submit-btn" type="submit" class="card" value="Submit">Submit</button>
+      </div>
+
+      <div class="result animated fadeIn" id="question_data"></div>
+      <div class="result animated fadeIn" id="answer_data"></div>
+
+    </div>
+  </form>
+
+  <br>
+  <br>
+
+  <hr>
+  <footer>
+
+    <div>Made with <span class="heart">♥&#xFE0E;</span> <a href="https://github.com/huggingface">Hugging Face</a</div>
+  </footer>
+
+</body>
+
+<script>
+      $(document).ready(function(){
+            $("#idForm").submit(function(e) {
+            e.preventDefault();
+            $("#submit-btn").text("Please wait...");
+            $("#submit-btn").attr("disabled", true);
+            var form = $(this);
+
+            $.ajax({
+                   type: "POST",
+                   url: document.location.href + "api",
+                   data: form.serialize(),
+                   success: function(data)
+                   {
+                       $("#submit-btn").attr("disabled", false);
+                       $("#submit-btn").text("Submit");
+                       $("#question").val("");
+                       $("#question_data").text(data.message.question);
+                       $("#answer_data").text(data.message.answer);
+                       $("#question_data").show();
+                       $("#answer_data").show();
+                   }
+                 });
+        });
+      });
+ </script>
+
+</html>
