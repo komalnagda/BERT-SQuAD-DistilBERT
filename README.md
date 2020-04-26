@@ -1,10 +1,7 @@
-# DistilBERT-SQuAD
+# BERT-SQuAD-DistilBERT
 
-![Build and Deploy to Cloud Run](https://github.com/oliverproud/DistilBERT-SQuAD/workflows/Build%20and%20Deploy%20to%20Cloud%20Run/badge.svg?branch=master)
 [![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/oliverproud/distilbert-squad-flask?logo=Docker&logoColor=FFF)](https://hub.docker.com/repository/docker/oliverproud/distilbert-squad-flask)
-[![Website](https://img.shields.io/website?down_message=offline&up_message=online&url=https%3A%2F%2Fqa.oliverproud.com)](https://qa.oliverproud.com)
 
-Try the demo at [qa.oliverproud.com](https://qa.oliverproud.com)
 
 # What is DistilBERT?
 
@@ -51,26 +48,6 @@ Run the container:
 docker run -dp 8080:8080 distilbert-squad-flask
 ```
 
-### Python venv
-
-In Python3 you can set up a virtual environment with
-
-```bash
-python3 -m venv /path/to/new/virtual/environment
-```
-
-Or by installing virtualenv with pip by doing
-```bash
-pip3 install virtualenv
-```
-Then creating the environment with
-```bash
-virtualenv venv
-```
-and finally activating it with
-```bash
-source venv/bin/activate
-```
 
 You must have Python3
 
@@ -79,9 +56,6 @@ Install the requirements with:
 pip3 install -r requirements.txt
 ```
 
-### Contact
-
-If you have any questions, feedback or problems of any kind, get in touch by messaging me on [Twitter - @oliverwproud](https://twitter.com/oliverwproud) or by submitting an issue.
 
 ### SQuAD Fine-tuned model
 
@@ -95,15 +69,6 @@ You can do this with
 model = DistilBertForQuestionAnswering.from_pretrained('distilbert-base-uncased-distilled-squad', config=config)
 ```
 
-# Making predictions
-
-You can test the model using `test.py` or using the provided Flask interface.
-
-![alt text](images/carbon.png)
-
-If you would like to try out the demo then head to [qa.oliverproud.com](https://qa.oliverproud.com)
-
-![alt text](images/demo.png)
 
 # How to train (Distil)BERT
 
