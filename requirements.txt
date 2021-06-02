@@ -24,6 +24,6 @@ https://download.pytorch.org/whl/cpu/torch-1.4.0%2Bcpu-cp37-cp37m-linux_x86_64.w
 tokenizers==0.5.2
 tqdm==4.43.0
 transformers==2.5.1
-urllib3==1.25.8
+urllib3==1.26.5
 Werkzeug==1.0.0
 gunicorn
